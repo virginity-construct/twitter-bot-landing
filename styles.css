@@ -397,17 +397,41 @@ nav {
     text-align: center;
 }
 
-.demo-video {
+.demo-video-container {
+    width: 100%;
     max-width: 800px;
-    margin: 3rem auto 0;
-    border-radius: var(--border-radius);
+    margin: 2rem auto;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+}
+
+.demo-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.demo-video:hover {
+    transform: scale(1.02);
 }
 
 .demo-video video {
     width: 100%;
     display: block;
+}
+
+@media (max-width: 768px) {
+    .demo-video-container {
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
 }
 
 /* Testimonials */
