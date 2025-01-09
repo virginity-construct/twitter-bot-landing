@@ -398,6 +398,7 @@ nav {
 }
 
 .demo-video-container {
+    position: relative;
     width: 100%;
     max-width: 800px;
     margin: 2rem auto;
@@ -409,6 +410,21 @@ nav {
     padding: 1rem;
 }
 
+.video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.demo-video:not(:defined) + .video-loading {
+    opacity: 1;
+}
+
 .demo-video {
     width: 100%;
     height: auto;
@@ -416,15 +432,17 @@ nav {
     border-radius: 8px;
     transform: scale(1);
     transition: transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .demo-video:hover {
     transform: scale(1.02);
-}
-
-.demo-video video {
-    width: 100%;
-    display: block;
 }
 
 @media (max-width: 768px) {
