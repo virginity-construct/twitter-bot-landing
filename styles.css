@@ -122,13 +122,23 @@ nav {
     flex: 1;
     position: relative;
     z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.hero-content h1 {
+    margin: 1.5rem 0 1rem;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--primary-color);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
 }
 
 .hero p {
@@ -401,13 +411,12 @@ nav {
     position: relative;
     width: 100%;
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 0 auto 2rem;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    padding: 1rem;
+    padding: 0.75rem;
 }
 
 .video-loading {
@@ -415,14 +424,10 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--primary-color);
+    color: var(--primary);
     font-weight: 500;
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-.demo-video:not(:defined) + .video-loading {
-    opacity: 1;
 }
 
 .demo-video {
@@ -434,6 +439,7 @@ nav {
     transition: transform 0.3s ease;
     opacity: 0;
     animation: fadeIn 0.5s ease forwards;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeIn {
@@ -447,8 +453,22 @@ nav {
 
 @media (max-width: 768px) {
     .demo-video-container {
-        margin: 1rem auto;
+        margin: 0 auto 1.5rem;
         padding: 0.5rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .hero-content h1 {
+        margin: 1rem 0 0.75rem;
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
