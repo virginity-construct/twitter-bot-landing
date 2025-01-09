@@ -98,82 +98,82 @@ nav {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 5% 5rem;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--background-light) 0%, white 100%);
-    min-height: 90vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 4rem 1rem;
     position: relative;
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-    z-index: 0;
-}
-
 .hero-content {
-    flex: 1;
-    position: relative;
-    z-index: 1;
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem;
     text-align: center;
 }
 
-.hero-content h1 {
-    margin: 1.5rem 0 1rem;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--primary-color);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Video Container */
+.demo-video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.demo-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* CTA Group */
+.cta-group {
+    margin-top: 2rem;
+}
+
+.primary-cta {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
     font-weight: 600;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.hero p {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    max-width: 600px;
+.primary-cta:hover {
+    transform: translateY(-2px);
 }
 
-.hero-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.hero-guarantee {
-    color: var(--text-light);
+.guarantee {
+    display: block;
     font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
 }
 
-.hero-guarantee::before {
-    content: '🛡️';
-    font-size: 1.2rem;
-}
-
-.hero-image {
-    flex: 1;
-    position: relative;
-    z-index: 1;
-}
-
+/* Floating Tweets */
 .floating-tweets {
     position: relative;
     height: 500px;
@@ -407,71 +407,6 @@ nav {
     text-align: center;
 }
 
-.demo-video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: 0.75rem;
-}
-
-.video-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary);
-    font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.demo-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    transform: scale(1);
-    transition: transform 0.3s ease;
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.demo-video:hover {
-    transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
-    .demo-video-container {
-        margin: 0 auto 1.5rem;
-        padding: 0.5rem;
-    }
-    
-    .hero-content {
-        padding: 1rem;
-    }
-    
-    .hero-content h1 {
-        margin: 1rem 0 0.75rem;
-        font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-    }
-}
-
 /* Testimonials */
 .testimonials {
     padding: 5rem 5%;
@@ -695,6 +630,23 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .demo-video-container {
+        margin: 1.5rem auto;
+        padding: 0.75rem;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
