@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TweetGenie AI - AI-Powered Social Growth Tool</title>
-    <meta name="description" content="Supercharge your social growth on X with TweetGenie AI. Effortlessly generate engaging content and drive results with smart tools!">
+    <title>TweetGenie AI: Your AI Growth Assistant for X</title>
+    <meta name="description" content="Harness AI to grow your X audience effortlessly. Engage smarter with TweetGenie AI's tools for content creation, analytics, and automation.">
     
     <!-- Primary domain -->
     <link rel="canonical" href="https://tweetgenieai.com" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css?v=20250109" as="style">
+    <link rel="preload" href="assets/logo.png" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -22,20 +27,21 @@
     <meta name="twitter:description" content="Transform your X presence with AI-powered growth. Start today!">
     <meta name="twitter:image" content="https://tweetgenieai.com/assets/og-image.png">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" sizes="16x16">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/site.webmanifest">
+    <!-- Favicon - simplified -->
+    <link rel="icon" href="/assets/favicon.ico">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css?v=20250109">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <nav role="navigation" aria-label="Main navigation">
+    <nav role="navigation">
         <div class="logo">
-            <img src="assets/logo.png" alt="TweetGenie AI company logo" width="150" height="40">
+            <img src="assets/logo.png" 
+                 srcset="assets/logo-150w.png 150w, assets/logo-300w.png 300w" 
+                 sizes="(max-width: 600px) 150px, 300px"
+                 alt="TweetGenie AI company logo" 
+                 width="150" height="40">
         </div>
         <div class="nav-links">
             <a href="#features" aria-label="View features">Features</a>
@@ -46,7 +52,7 @@
     </nav>
 
     <main>
-        <section class="hero" role="banner">
+        <section class="hero">
             <div class="hero-content">
                 <h1>Transform Your X Presence with AI-Powered Growth</h1>
                 <p class="hero-subtitle">All-in-one growth assistant for creators and businesses.</p>
@@ -100,8 +106,8 @@
                 </div>
 
                 <div class="feature-card" role="article">
-                    <div class="feature-icon" aria-hidden="true">
-                        <i class="fas fa-bullseye"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye" role="presentation"></i>
                     </div>
                     <h3>Audience Insights</h3>
                     <p class="feature-tagline">Understand and grow your perfect audience</p>
@@ -114,7 +120,7 @@
             <h2 id="pricing-title">Start Growing Today—Affordable, Clear Pricing</h2>
             <p class="section-subtitle">Everything You Need for Just $49/month!</p>
             
-            <div class="pricing-card" role="article">
+            <div class="pricing-card">
                 <div class="pricing-header">
                     <h3>Growth Plan</h3>
                     <p class="price">$49<span>/month</span></p>
@@ -122,11 +128,11 @@
                 </div>
                 
                 <ul>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited AI-generated tweets</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> 24/7 automated DM responses</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Comprehensive analytics dashboard</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Audience growth insights</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Regular feature updates</li>
+                    <li><i class="fas fa-check" role="presentation"></i> Unlimited AI-generated tweets</li>
+                    <li><i class="fas fa-check" role="presentation"></i> 24/7 automated DM responses</li>
+                    <li><i class="fas fa-check" role="presentation"></i> Comprehensive analytics dashboard</li>
+                    <li><i class="fas fa-check" role="presentation"></i> Audience growth insights</li>
+                    <li><i class="fas fa-check" role="presentation"></i> Regular feature updates</li>
                 </ul>
                 
                 <div class="pricing-guarantee">
@@ -221,8 +227,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
-                    <a href="privacy.html" aria-label="View privacy policy">Privacy Policy</a>
-                    <a href="terms.html" aria-label="View terms of service">Terms of Service</a>
+                    <a href="/privacy" aria-label="View privacy policy">Privacy Policy</a>
+                    <a href="/terms" aria-label="View terms of service">Terms of Service</a>
                 </div>
                 <div class="footer-section">
                     <h4>Connect</h4>
@@ -240,6 +246,21 @@
         </div>
     </footer>
 
+    <style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .cta-button {
+            animation: pulse 5s infinite;
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover {
+            animation: none;
+            transform: scale(1.05);
+        }
+    </style>
+
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -249,17 +270,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Add animation class to CTA buttons
-        const ctaButtons = document.querySelectorAll('.cta-button');
-        ctaButtons.forEach(button => {
-            setInterval(() => {
-                button.classList.add('pulse');
-                setTimeout(() => {
-                    button.classList.remove('pulse');
-                }, 1000);
-            }, 5000);
         });
     </script>
 </body>
