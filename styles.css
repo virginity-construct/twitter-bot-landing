@@ -64,6 +64,12 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-top: 70px; /* Add padding for fixed header */
+}
+
+main {
+    position: relative;
+    z-index: 1;
 }
 
 /* Typography */
@@ -103,7 +109,9 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
+    height: 70px; /* Fixed height for header */
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.9);
 }
