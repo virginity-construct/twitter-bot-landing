@@ -111,13 +111,20 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 70px; /* Fixed height for header */
+    height: 70px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
     height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links a {
@@ -603,8 +610,14 @@ footer {
     margin-bottom: 3rem;
 }
 
+.footer-logo {
+    margin-bottom: var(--space-md);
+}
+
 .footer-logo img {
-    height: 30px;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
 }
 
 .footer-links {
